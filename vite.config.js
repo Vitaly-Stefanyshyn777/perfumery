@@ -1,13 +1,13 @@
 // vite.config.js
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 
 export default defineConfig({
-  // Задайте базовий шлях залежно від вашого розміщення
-  base: "/perfumery/", // Замініть на назву вашого репозиторію, якщо деплоїте на GitHub Pages піддомен
+  base: "/perfumery/", // Замініть 'my-react-app' на назву вашого репозиторію
+  plugins: [react()],
   build: {
     outDir: "dist",
-    // Додаткові налаштування збірки можуть бути додані тут
   },
   resolve: {
     alias: {
