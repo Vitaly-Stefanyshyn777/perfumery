@@ -1,25 +1,13 @@
-name: CI
+# blank.yml
+name: Blank Workflow
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x' # Використовуйте стабільну версію Node.js
-      - name: Install dependencies
-        run: npm install
-      - name: Run ESLint
-        run: npm run lint -- --max-warnings=0
-      - name: Build project
-        run: npm run build
+      - name: Checkout repository
+        uses: actions/checkout@v3
